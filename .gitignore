@@ -1,18 +1,62 @@
-# OS generated files
+# ---- OS generated files ----
 Thumbs.db
 ehthumbs.db
 Desktop.ini
 .DS_Store
+$RECYCLE.BIN/
 
-# Editor / IDE
+# ---- Editor / IDE ----
 .idea/
 .vscode/
 *.swp
+*.swo
+*~
 
-# Logs & temp
+# ---- Logs & temp ----
 *.log
 *.tmp
 ~$*
+*.bak
+*.cache
 
-# WorkBuddy project metadata
+# ---- WorkBuddy project metadata ----
 .workbuddy/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# ---- C / C++ ----
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+build/
+cmake-build-*/
+
+# ---- Java ----
+*.class
+*.jar
+*.war
+target/
+bin/
+out/
+
+# ---- JavaScript / Node ----
+node_modules/
+dist/
+build/static/
+
+# ---- 压缩包 ----
+*.zip
+*.rar
+*.7z
