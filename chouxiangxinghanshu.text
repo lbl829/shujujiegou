@@ -1,0 +1,50 @@
+#include<stdio.h>
+struct  Complex
+{
+	double realnumber;
+	double imagenumber;
+};
+void assign(Complex* A, double real, double image)
+{
+	(*A).realnumber = real;
+	(*A).imagenumber = image;
+}
+void addComplex(Complex* C, Complex *A, Complex *B)
+{
+	(*C).realnumber = (*A).realnumber + (*B).realnumber;
+	(*C).imagenumber = (*A).imagenumber + (*B).imagenumber;
+}
+void multiplyComplex(Complex* D, Complex* A, Complex* B)
+{
+	(*D).realnumber = (*A).realnumber * (*B).realnumber - (*A).imagenumber * (*B).imagenumber;
+	(*D).imagenumber = (*A).realnumber * (*B).imagenumber + (*A).imagenumber * (*B).realnumber;
+}
+int divideComplex(Complex* E,Complex* C,Complex* D)
+{
+	double denominator = (*C).realnumber * (*C).realnumber + (*C).imagenumber * (*C).imagenumber;
+	if (denominator == 0)
+	{
+		return 0;
+	}
+	(*E).realnumber = ((*C).realnumber * (*D).realnumber + (*C).imagenumber * (*D).imagenumber) / denominator;
+	(*E).imagenumber = ((*C).imagenumber * (*D).realnumber - (*C).realnumber * (*D).imagenumber) / denominator;
+	return 1;
+}
+int main()
+{
+	Complex A, B, C, D, E;
+	assign(&A, 8.0, 6.0);
+	assign(&B, 4.0, 3.0);
+	addComplex(&C, &A, &B);
+	multiplyComplex(&D, &A, &B);
+	if (divideComplex(&E, &C, &D))
+	{
+		printf("The result of division is: %.2f + %.2fi\n", E.realnumber, E.imagenumber);
+
+	}
+	else
+	{
+		printf("Division by zero error!\n");
+	}
+	return 0;
+}
