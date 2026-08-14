@@ -13,3 +13,6 @@ Desktop.ini
 *.log
 *.tmp
 ~$*
+
+# WorkBuddy project metadata
+.workbuddy/
